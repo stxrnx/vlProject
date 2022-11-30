@@ -1,0 +1,120 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div
+        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Crea il tuo Account</a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <p>{{ciao}}</p>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Fields
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!--Forms Field-->
+    <div
+        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-20 border-b bg-card dark:bg-transparent">
+
+        <div class="max-w-3xl">
+
+            <div class="prose prose-sm max-w-3xl">
+
+                <form [formGroup]="formTable">
+                    <div formGroupName="user">
+                        <div formGroupName="userData">
+                            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                                <div class="form-group">
+                                    <label for="nome"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
+                                    <input type="text" id="nome"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="John" required formControlName="nome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cognome"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cognome</label>
+                                    <input type="text" id="cognome"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Doe" required formControlName="cognome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="anni"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Età (min 10
+                                        anni)</label>
+                                    <input type="number" id="anni"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="19" required formControlName="anni">
+                                </div>
+                                <div class="form-group">
+                                    <label for="paese"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Paese</label>
+                                    <input type="text" id="paese"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Germany" required formControlName="paese">
+                                </div>
+                            </div>
+                        </div>
+                    <div formGroupName="userCredenziali">
+                        <div class="grid gap-6 mb-6 md:grid-cols-2">
+                        
+                            <div class="mb-6">
+                                <label for="phone"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cellulare</label>
+                                <input type="tel" id="phone"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="123-45-678" required formControlName="phone">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email
+                                    address</label>
+                                <input type="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="john.doe@company.com" required formControlName="email">
+                            </div>
+                        </div>
+                        <div class="grid gap-6 mb-6 md:grid-cols-1">
+                            <div class="-mt-6">
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <input type="password" id="password" name="password"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="•••••••••" required formControlName="password">
+                            </div>
+                            <div class="mb-6">
+                                <label for="confermaPassword"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Conferma Password</label>
+                                <input type="password" id="confermaPassword" name="confermaPassword"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="•••••••••" required formControlName="confermaPassword">
+
+                                    
+                            </div>
+                            <span
+                            *ngIf="!formTable.get('user').valid && formTable.get('user').touched"
+                            class="text-muted">
+                            Si prega di compilare tutti i campi!
+                            </span>
+                            <div class="mb-6">
+                                <button type="submit" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                               [disabled]="!formTable.valid" >Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
